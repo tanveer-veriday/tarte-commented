@@ -1235,6 +1235,7 @@ var tarteaucitron = {
 
                 service = s[tarteaucitron.job[index]];
                 key = service.key;
+                if(service.mandatory !== 'undefined' && service.mandatory === true) return;
                 if (tarteaucitron.state[key] !== status) {
                     if (status === false && tarteaucitron.launch[key] === true) {
                         tarteaucitron.reloadThePage = true;
